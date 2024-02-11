@@ -1,0 +1,29 @@
+.footer {
+  display: grid;
+  align-content: flex-start;
+  justify-items: center;
+  width: 100%;
+  background: #000000;
+  position: relative;
+  min-width: 0;
+  grid-template-columns:
+    var(--plsmc-viewport-gap) 1fr minmax(0, var(--plsmc-wide-chunk))
+    min(
+      var(--plsmc-standard-width),
+      calc(100% - var(--plsmc-viewport-gap) - var(--plsmc-viewport-gap))
+    )
+    minmax(0, var(--plsmc-wide-chunk)) 1fr var(--plsmc-viewport-gap);
+  padding: 24px 0;
+}
+.footer > * {
+  grid-column: 4;
+}
+.text {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  text-align: center;
+  color: #ffffff;
+  min-width: 0;
+}

@@ -1,0 +1,33 @@
+.root {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 60px;
+  height: 60px;
+  max-width: 100%;
+}
+.link__uyOF {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  max-width: 100%;
+  background: #25d366;
+  box-shadow: 0px 12px 24px 0px #25d36673;
+  cursor: pointer;
+  flex-shrink: 0;
+  border-radius: 100px;
+  padding: 8px;
+}
+.svg__lx5Es {
+  object-fit: cover;
+  max-width: 100%;
+  width: 42px;
+  height: 42px;
+  color: #ffffff;
+  flex-shrink: 0;
+}
