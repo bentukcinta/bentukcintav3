@@ -87,6 +87,12 @@
   > img {
   margin-top: 12px;
 }
+.reveal:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
+  color: #ffffff;
+}
 .text__eyHok {
   font-family: "Poppins", sans-serif;
   position: relative;

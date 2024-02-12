@@ -67,6 +67,7 @@ import {
 
 import { PlasmicHead } from "@plasmicapp/react-web";
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
+import { Reveal } from "@plasmicpkgs/react-awesome-reveal";
 import YouTube from "@plasmicpkgs/react-youtube";
 import { Iframe } from "@plasmicpkgs/plasmic-basic-components";
 import WaButton from "../../WaButton"; // plasmic-import: -FgUGjBTnfh7/component
@@ -112,6 +113,7 @@ export type PlasmicTheme1__OverridesType = {
   root?: Flex__<"div">;
   pageMetadataOverride?: Flex__<typeof PlasmicHead>;
   hero?: Flex__<"section">;
+  reveal?: Flex__<typeof Reveal>;
   undangan?: Flex__<"section">;
   columns?: Flex__<"div">;
   details?: Flex__<"section">;
@@ -183,7 +185,7 @@ function PlasmicTheme1__RenderFunc(props: {
         path: "dialog.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => true
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       },
       {
         path: "dialogImage.open",
@@ -349,144 +351,153 @@ function PlasmicTheme1__RenderFunc(props: {
           hasGap={true}
           className={classNames(projectcss.all, sty.freeBox__siqDe)}
         >
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__eyHok
-            )}
+          <Reveal
+            data-plasmic-name={"reveal"}
+            data-plasmic-override={overrides.reveal}
+            cascade={true}
+            className={classNames("__wab_instance", sty.reveal)}
+            direction={"up"}
+            triggerOnce={true}
           >
-            {"UNDANGAN PERNIKAHAN"}
-          </div>
-          <Stack__
-            as={"div"}
-            hasGap={true}
-            className={classNames(projectcss.all, sty.freeBox__gi2TR)}
-          >
-            <h1
+            <div
               className={classNames(
                 projectcss.all,
-                projectcss.h1,
                 projectcss.__wab_text,
-                sty.h1__iKdJf
+                sty.text__eyHok
               )}
             >
-              <React.Fragment>
-                {(() => {
-                  try {
-                    return (
-                      $queries.query.data[0].panggilanPria +
-                      " & " +
-                      $queries.query.data[0].panggilanWanita
-                    );
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return "";
+              {"UNDANGAN PERNIKAHAN"}
+            </div>
+            <Stack__
+              as={"div"}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.freeBox__gi2TR)}
+            >
+              <h1
+                className={classNames(
+                  projectcss.all,
+                  projectcss.h1,
+                  projectcss.__wab_text,
+                  sty.h1__iKdJf
+                )}
+              >
+                <React.Fragment>
+                  {(() => {
+                    try {
+                      return (
+                        $queries.query.data[0].panggilanPria +
+                        " & " +
+                        $queries.query.data[0].panggilanWanita
+                      );
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return "";
+                      }
+                      throw e;
                     }
-                    throw e;
-                  }
-                })()}
-              </React.Fragment>
-            </h1>
-          </Stack__>
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__tZzyX
-            )}
-          >
-            {
-              "WE INVITE YOU TO CELEBRATE\nWITH US THE MOST SPECIAL DAY IN OUR LIFES"
-            }
-          </div>
-          <Stack__
-            as={"div"}
-            hasGap={true}
-            className={classNames(projectcss.all, sty.freeBox__ecShW)}
-          >
-            <span
+                  })()}
+                </React.Fragment>
+              </h1>
+            </Stack__>
+            <div
               className={classNames(
                 projectcss.all,
-                projectcss.span,
                 projectcss.__wab_text,
-                sty.span__e6C9S
+                sty.text__tZzyX
               )}
             >
-              <React.Fragment>
-                {(() => {
-                  try {
-                    return new Date(
-                      $queries.query.data[0].tanggalAcara
-                    ).getDate();
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return "WE INVITE YOU TO CELEBRATE\nWITH US THE MOST SPECIAL DAY IN OUR LIFES";
-                    }
-                    throw e;
-                  }
-                })()}
-              </React.Fragment>
-            </span>
-            <span
-              className={classNames(
-                projectcss.all,
-                projectcss.span,
-                projectcss.__wab_text,
-                sty.span__pMclc
-              )}
+              {
+                "WE INVITE YOU TO CELEBRATE\nWITH US THE MOST SPECIAL DAY IN OUR LIFES"
+              }
+            </div>
+            <Stack__
+              as={"div"}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.freeBox__ecShW)}
             >
-              <React.Fragment>
-                {(() => {
-                  try {
-                    return new Date(
-                      $queries.query.data[0].tanggalAcara
-                    ).toLocaleString("default", { month: "long" });
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return "WE INVITE YOU TO CELEBRATE\nWITH US THE MOST SPECIAL DAY IN OUR LIFES";
+              <span
+                className={classNames(
+                  projectcss.all,
+                  projectcss.span,
+                  projectcss.__wab_text,
+                  sty.span__e6C9S
+                )}
+              >
+                <React.Fragment>
+                  {(() => {
+                    try {
+                      return new Date(
+                        $queries.query.data[0].tanggalAcara
+                      ).getDate();
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return "WE INVITE YOU TO CELEBRATE\nWITH US THE MOST SPECIAL DAY IN OUR LIFES";
+                      }
+                      throw e;
                     }
-                    throw e;
-                  }
-                })()}
-              </React.Fragment>
-            </span>
-            <span
-              className={classNames(
-                projectcss.all,
-                projectcss.span,
-                projectcss.__wab_text,
-                sty.span__gJHe2
-              )}
-            >
-              <React.Fragment>
-                {(() => {
-                  try {
-                    return new Date(
-                      $queries.query.data[0].tanggalAcara
-                    ).getFullYear();
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return "WE INVITE YOU TO CELEBRATE\nWITH US THE MOST SPECIAL DAY IN OUR LIFES";
+                  })()}
+                </React.Fragment>
+              </span>
+              <span
+                className={classNames(
+                  projectcss.all,
+                  projectcss.span,
+                  projectcss.__wab_text,
+                  sty.span__pMclc
+                )}
+              >
+                <React.Fragment>
+                  {(() => {
+                    try {
+                      return new Date(
+                        $queries.query.data[0].tanggalAcara
+                      ).toLocaleString("default", { month: "long" });
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return "WE INVITE YOU TO CELEBRATE\nWITH US THE MOST SPECIAL DAY IN OUR LIFES";
+                      }
+                      throw e;
                     }
-                    throw e;
-                  }
-                })()}
-              </React.Fragment>
-            </span>
-          </Stack__>
+                  })()}
+                </React.Fragment>
+              </span>
+              <span
+                className={classNames(
+                  projectcss.all,
+                  projectcss.span,
+                  projectcss.__wab_text,
+                  sty.span__gJHe2
+                )}
+              >
+                <React.Fragment>
+                  {(() => {
+                    try {
+                      return new Date(
+                        $queries.query.data[0].tanggalAcara
+                      ).getFullYear();
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return "WE INVITE YOU TO CELEBRATE\nWITH US THE MOST SPECIAL DAY IN OUR LIFES";
+                      }
+                      throw e;
+                    }
+                  })()}
+                </React.Fragment>
+              </span>
+            </Stack__>
+          </Reveal>
         </Stack__>
       </section>
       <section
@@ -1669,6 +1680,7 @@ const PlasmicDescendants = {
     "root",
     "pageMetadataOverride",
     "hero",
+    "reveal",
     "undangan",
     "columns",
     "details",
@@ -1684,7 +1696,8 @@ const PlasmicDescendants = {
     "dialogImage"
   ],
   pageMetadataOverride: ["pageMetadataOverride"],
-  hero: ["hero"],
+  hero: ["hero", "reveal"],
+  reveal: ["reveal"],
   undangan: ["undangan", "columns"],
   columns: ["columns"],
   details: ["details"],
@@ -1706,6 +1719,7 @@ type NodeDefaultElementType = {
   root: "div";
   pageMetadataOverride: typeof PlasmicHead;
   hero: "section";
+  reveal: typeof Reveal;
   undangan: "section";
   columns: "div";
   details: "section";
@@ -1783,6 +1797,7 @@ export const PlasmicTheme1 = Object.assign(
     // Helper components rendering sub-elements
     pageMetadataOverride: makeNodeComponent("pageMetadataOverride"),
     hero: makeNodeComponent("hero"),
+    reveal: makeNodeComponent("reveal"),
     undangan: makeNodeComponent("undangan"),
     columns: makeNodeComponent("columns"),
     details: makeNodeComponent("details"),

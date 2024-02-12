@@ -55,7 +55,8 @@
   padding: 0px;
 }
 .rootcolor_blue {
-  background: #0091ff;
+  background: linear-gradient(0deg, #7b51f1 0%, #9168ff 100%);
+  box-shadow: 0px 4px 16px 0px #794de933;
 }
 .rootcolor_green {
   background: #30a46c;
@@ -106,7 +107,7 @@
   background: #282826;
 }
 .rootcolor_blue:hover {
-  background: #369eff;
+  background: #9168ff;
 }
 .rootcolor_green:hover {
   background: #3cb179;
@@ -156,7 +157,7 @@
   background: #2e2e2b;
 }
 .rootcolor_blue:active {
-  background: #52a9ff;
+  background: #6842ca;
 }
 .rootcolor_green:active {
   background: #4cc38a;
@@ -298,10 +299,10 @@
   color: #1b1b18;
 }
 .slotTargetChildrencolor_link {
-  color: #0091ff;
+  color: #9168ff;
 }
 .rootcolor_link:hover .slotTargetChildrencolor_link {
-  color: #0081f1;
+  color: #9168ff;
 }
 .rootcolor_link:hover .slotTargetChildrencolor_link > :global(.__wab_text),
 .rootcolor_link:hover
@@ -355,7 +356,7 @@
   > :global(.__wab_slot)
   > :global(.__wab_slot)
   > :global(.__wab_slot-string-wrapper) {
-  text-decoration-line: underline;
+  text-decoration-line: none;
 }
 .root:focus-within .slotTargetChildren > *,
 .root:focus-within .slotTargetChildren > :global(.__wab_slot) > *,
@@ -422,7 +423,7 @@
   outline: none;
 }
 .rootcolor_link:active .slotTargetChildrencolor_link {
-  color: #006adc;
+  color: #6d40e8;
 }
 .endIconContainer {
   display: flex;

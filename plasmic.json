@@ -7,7 +7,7 @@
   },
   "style": {
     "scheme": "css-modules",
-    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.css"
+    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.module.css"
   },
   "images": {
     "scheme": "public-files",
@@ -109,7 +109,8 @@
           "componentImportPath": "@plasmicpkgs/radix-ui"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "caTPwKxj5ZrD9LQ7DMdK4Z",
@@ -167,7 +168,8 @@
           "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "enk3K4vZ6pmH6kVCoZJXGn",
@@ -189,7 +191,8 @@
           "componentImportPath": "@plasmicpkgs/react-youtube"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "jkU633o1Cz7HrJdwdxhVHk",
@@ -243,7 +246,8 @@
           }
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "ohDidvG9XsCeFumugENU3J",
@@ -643,7 +647,8 @@
           "componentImportPath": "@plasmicpkgs/antd5/skinny/registerBreadcrumb"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "9qXrGYPf2wu9Q69JKgx7rd",
@@ -784,6 +789,19 @@
           "cssFilePath": "plasmic/bentuk_cintav_3/PlasmicDialogImage.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "sirgQiSNN0bg",
+          "name": "NavbarCinta",
+          "type": "managed",
+          "projectId": "9qXrGYPf2wu9Q69JKgx7rd",
+          "renderModuleFilePath": "plasmic/bentuk_cintav_3/PlasmicNavbarCinta.tsx",
+          "importSpec": {
+            "modulePath": "NavbarCinta.tsx"
+          },
+          "cssFilePath": "plasmic/bentuk_cintav_3/PlasmicNavbarCinta.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
@@ -801,6 +819,36 @@
           "id": "9XXkyNPveBxl",
           "name": "IconIcon",
           "moduleFilePath": "plasmic/bentuk_cintav_3/icons/PlasmicIcon__Icon.tsx"
+        },
+        {
+          "id": "QXV0OvQWlZr3",
+          "name": "InfoSquareSvgrepoComsvgIcon",
+          "moduleFilePath": "plasmic/bentuk_cintav_3/icons/PlasmicIcon__InfoSquareSvgrepoComsvg.tsx"
+        },
+        {
+          "id": "IqK9HpAnKXA8",
+          "name": "CameraSvgrepoComsvgIcon",
+          "moduleFilePath": "plasmic/bentuk_cintav_3/icons/PlasmicIcon__CameraSvgrepoComsvg.tsx"
+        },
+        {
+          "id": "IJYAE3_VV4_5",
+          "name": "PointOnMapSvgrepoComsvgIcon",
+          "moduleFilePath": "plasmic/bentuk_cintav_3/icons/PlasmicIcon__PointOnMapSvgrepoComsvg.tsx"
+        },
+        {
+          "id": "D6JWCJfonpr4",
+          "name": "ChatUnreadSvgrepoComsvgIcon",
+          "moduleFilePath": "plasmic/bentuk_cintav_3/icons/PlasmicIcon__ChatUnreadSvgrepoComsvg.tsx"
+        },
+        {
+          "id": "FBT7N8u9JO5E",
+          "name": "VolumeLoudSvgrepoComsvgIcon",
+          "moduleFilePath": "plasmic/bentuk_cintav_3/icons/PlasmicIcon__VolumeLoudSvgrepoComsvg.tsx"
+        },
+        {
+          "id": "Ah2sMX_pKlWL",
+          "name": "ChatRoundUnreadSvgrepoComsvgIcon",
+          "moduleFilePath": "plasmic/bentuk_cintav_3/icons/PlasmicIcon__ChatRoundUnreadSvgrepoComsvg.tsx"
         }
       ],
       "images": [
@@ -813,6 +861,51 @@
           "id": "RJfwsnUR_7kf",
           "name": "floral-bg-min.png",
           "filePath": "../public/plasmic/bentuk_cintav_3/images/floralBgMinpng.png"
+        },
+        {
+          "id": "C43qfBjaRcxj",
+          "name": "DALL·E 2024-02-11 21.20.00 - Design a full HD website hero banner image in a 3D, cute, clay-like style. The scene depicts a charming winged letter, adorned with a heart, as it joy.webp",
+          "filePath": "../public/plasmic/bentuk_cintav_3/images/dalle20240211212000DesignAFullHdWebsiteHeroBannerImageInA3DCuteClayLikeStyleTheSceneDepictsACharmingWingedLetterAdornedWithAHeartAsItJoywebp.webp"
+        },
+        {
+          "id": "QBwqvyPPbUHC",
+          "name": "banner (1920 x 1080 px)-edited-min.png",
+          "filePath": "../public/plasmic/bentuk_cintav_3/images/banner1920X1080PxEditedMinpng.png"
+        },
+        {
+          "id": "EeUH_41MbVyx",
+          "name": "banner (1920 x 1080 px)-edited-min.png 2",
+          "filePath": "../public/plasmic/bentuk_cintav_3/images/banner1920X1080PxEditedMinpng2.png"
+        },
+        {
+          "id": "KeZ4n0YuhYjc",
+          "name": "cupidsmartphone.png",
+          "filePath": "../public/plasmic/bentuk_cintav_3/images/cupidsmartphonepng.png"
+        },
+        {
+          "id": "6IoIJlU-pe1H",
+          "name": "DALL·E 2024-02-12 17.42.52 - Create a 3D clay-style illustration featuring two cute cupids playing with a smartphone, exchanging and sending love messages to each other. This hear.webp",
+          "filePath": "../public/plasmic/bentuk_cintav_3/images/dalle20240212174252CreateA3DClayStyleIllustrationFeaturingTwoCuteCupidsPlayingWithASmartphoneExchangingAndSendingLoveMessagesToEachOtherThisHearwebp.webp"
+        },
+        {
+          "id": "IK9lV0jr0nA2",
+          "name": "cupid-smartphone.png 2",
+          "filePath": "../public/plasmic/bentuk_cintav_3/images/cupidSmartphonepng2.png"
+        },
+        {
+          "id": "3p-NrdzwZXis",
+          "name": "banner-cta.png",
+          "filePath": "../public/plasmic/bentuk_cintav_3/images/bannerCtapng.png"
+        },
+        {
+          "id": "fnQYKzacqZwO",
+          "name": "26417aa981c9aa0a26aa065392188ce1.webp",
+          "filePath": "../public/plasmic/bentuk_cintav_3/images/_26417Aa981C9Aa0A26Aa065392188Ce1Webp.webp"
+        },
+        {
+          "id": "yQog-l-Q6POG",
+          "name": "logowite.webp",
+          "filePath": "../public/plasmic/bentuk_cintav_3/images/logowitewebp.webp"
         }
       ],
       "indirect": false,
@@ -830,6 +923,100 @@
           "name": "Fetcher",
           "displayName": "plasmic-data-source-fetcher",
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
+        }
+      ],
+      "customFunctions": []
+    },
+    {
+      "projectId": "7nJ7UcFmq9UzB6eXfC5z4a",
+      "projectApiToken": "uZp069FLSLNVA2dpWnqC3BUaj3flvtNBNXt6e1b67rm4Uh6lGHgYJ65FCBXlOFTB5KDW7RmmOxIAzgHYCg",
+      "projectName": "plasmic-nav",
+      "version": ">0.0.0",
+      "cssFilePath": "plasmic/plasmic_nav/plasmic_plasmic_nav.module.css",
+      "components": [],
+      "icons": [],
+      "images": [],
+      "indirect": true,
+      "globalContextsFilePath": "",
+      "splitsProviderFilePath": "",
+      "codeComponents": [
+        {
+          "id": "jGx9tiKJoex",
+          "name": "NavigationBar",
+          "displayName": "hostless-plasmic-navigation-bar",
+          "componentImportPath": "@plasmicpkgs/plasmic-nav"
+        }
+      ],
+      "customFunctions": []
+    },
+    {
+      "projectId": "58GpZjZCWTaJ8AUhpCwt2K",
+      "projectApiToken": "DIkcfhBwjMCJSjcxfBkMuy4NImyytq5EWylxVcpS9t9EpdhnPQuBgBGxmk00AB1itMFa1KXTxOKnrjN2PN9nlA",
+      "projectName": "react-awesome-reveal",
+      "version": ">0.0.0",
+      "cssFilePath": "plasmic/react_awesome_reveal/plasmic_react_awesome_reveal.module.css",
+      "components": [],
+      "icons": [],
+      "images": [],
+      "indirect": true,
+      "globalContextsFilePath": "",
+      "splitsProviderFilePath": "",
+      "codeComponents": [
+        {
+          "id": "R6s1FdhksG",
+          "name": "Reveal",
+          "displayName": "hostless-reveal",
+          "componentImportPath": "@plasmicpkgs/react-awesome-reveal"
+        }
+      ],
+      "customFunctions": []
+    },
+    {
+      "projectId": "5dGW8Awro3qq8Hh5MveXLP",
+      "projectApiToken": "wVHvHSTRyoO1MQddr5ypmW8AfwiMMy7h0Iaj4Q2YmYLLEo2A4L6pLn8Fydm8wQkTAJV9uAD5bJPo8bmGg",
+      "projectName": "lottie-react",
+      "version": ">0.0.0",
+      "cssFilePath": "plasmic/lottie_react/plasmic_lottie_react.module.css",
+      "components": [],
+      "icons": [],
+      "images": [],
+      "indirect": true,
+      "globalContextsFilePath": "",
+      "splitsProviderFilePath": "",
+      "codeComponents": [
+        {
+          "id": "BPNsJ2qis6",
+          "name": "LottieWrapper",
+          "displayName": "hostless-lottie-react",
+          "componentImportPath": "@plasmicpkgs/lottie-react"
+        },
+        {
+          "id": "vbTFHH9P-cuM",
+          "name": "AsyncLottieWrapper",
+          "displayName": "hostless-lottie-async-react",
+          "componentImportPath": "@plasmicpkgs/lottie-react"
+        }
+      ],
+      "customFunctions": []
+    },
+    {
+      "projectId": "9Vr5YWkf3w7jj6SsTcCEta",
+      "projectApiToken": "IvzN3wRogyeRjfeLl1hqzdjIjkVBvUQXxxVMFtbbpBdxfeSyKuR8fwKkECaSQERdZAIiGsh8aXppCCjBiCYyg",
+      "projectName": "loading-boundary",
+      "version": ">0.0.0",
+      "cssFilePath": "plasmic/loading_boundary/plasmic_loading_boundary.module.css",
+      "components": [],
+      "icons": [],
+      "images": [],
+      "indirect": true,
+      "globalContextsFilePath": "",
+      "splitsProviderFilePath": "",
+      "codeComponents": [
+        {
+          "id": "u-J0rH0B-4",
+          "name": "LoadingBoundary",
+          "displayName": "hostless-loading-boundary",
+          "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
         }
       ],
       "customFunctions": []

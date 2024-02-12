@@ -65,7 +65,11 @@ import {
   usePlasmicInvalidate
 } from "@plasmicapp/react-web/lib/data-sources";
 
+import NavbarCinta from "../../NavbarCinta"; // plasmic-import: sirgQiSNN0bg/component
+import Button from "../../Button"; // plasmic-import: 41nNSCEHS4Ht/component
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
+
+import { useScreenVariants as useScreenVariants_5QipZgXphdXi } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: 5QIPZgXphdXi/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -73,6 +77,15 @@ import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic_antd_5_hostl
 import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plasmic_plasmic_rich_components.module.css"; // plasmic-import: jkU633o1Cz7HrJdwdxhVHk/projectcss
 import projectcss from "./plasmic_bentuk_cintav_3.module.css"; // plasmic-import: 9qXrGYPf2wu9Q69JKgx7rd/projectcss
 import sty from "./PlasmicHomepage.module.css"; // plasmic-import: XpsL5d1JvclO/css
+
+import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: epcUIRU7cW9p/icon
+import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: 9XXkyNPveBxl/icon
+import InfoSquareSvgrepoComsvgIcon from "./icons/PlasmicIcon__InfoSquareSvgrepoComsvg"; // plasmic-import: QXV0OvQWlZr3/icon
+import CameraSvgrepoComsvgIcon from "./icons/PlasmicIcon__CameraSvgrepoComsvg"; // plasmic-import: IqK9HpAnKXA8/icon
+import PointOnMapSvgrepoComsvgIcon from "./icons/PlasmicIcon__PointOnMapSvgrepoComsvg"; // plasmic-import: IJYAE3_VV4_5/icon
+import ChatUnreadSvgrepoComsvgIcon from "./icons/PlasmicIcon__ChatUnreadSvgrepoComsvg"; // plasmic-import: D6JWCJfonpr4/icon
+import VolumeLoudSvgrepoComsvgIcon from "./icons/PlasmicIcon__VolumeLoudSvgrepoComsvg"; // plasmic-import: FBT7N8u9JO5E/icon
+import ChatRoundUnreadSvgrepoComsvgIcon from "./icons/PlasmicIcon__ChatRoundUnreadSvgrepoComsvg"; // plasmic-import: Ah2sMX_pKlWL/icon
 
 createPlasmicElementProxy;
 
@@ -87,9 +100,7 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHomepage__OverridesType = {
   root?: Flex__<"div">;
-  section?: Flex__<"section">;
-  h1?: Flex__<"h1">;
-  link?: Flex__<"a"> & Partial<LinkProps>;
+  navbarCinta?: Flex__<typeof NavbarCinta>;
 };
 
 export interface DefaultHomepageProps {}
@@ -128,6 +139,23 @@ function PlasmicHomepage__RenderFunc(props: {
   let [$queries, setDollarQueries] = React.useState<
     Record<string, ReturnType<typeof usePlasmicDataOp>>
   >({});
+  const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
+    () => [
+      {
+        path: "navbarCinta.scrollingPage",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
+      }
+    ],
+    [$props, $ctx, $refs]
+  );
+  const $state = useDollarState(stateSpecs, {
+    $props,
+    $ctx,
+    $queries: $queries,
+    $refs
+  });
 
   const new$Queries: Record<string, ReturnType<typeof usePlasmicDataOp>> = {
     query: usePlasmicDataOp(() => {
@@ -146,6 +174,10 @@ function PlasmicHomepage__RenderFunc(props: {
 
     $queries = new$Queries;
   }
+
+  const globalVariants = ensureGlobalVariants({
+    screen: useScreenVariants_5QipZgXphdXi()
+  });
 
   return (
     <React.Fragment>
@@ -174,85 +206,947 @@ function PlasmicHomepage__RenderFunc(props: {
             sty.root
           )}
         >
-          <section
-            data-plasmic-name={"section"}
-            data-plasmic-override={overrides.section}
-            className={classNames(projectcss.all, sty.section)}
-          >
-            <h1
-              data-plasmic-name={"h1"}
-              data-plasmic-override={overrides.h1}
-              className={classNames(
-                projectcss.all,
-                projectcss.h1,
-                projectcss.__wab_text,
-                sty.h1
-              )}
-            >
-              {"Welcome to bentukCinta"}
-            </h1>
-            {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
-              (() => {
-                try {
-                  return $queries.query.data;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return [];
-                  }
-                  throw e;
+          <NavbarCinta
+            data-plasmic-name={"navbarCinta"}
+            data-plasmic-override={overrides.navbarCinta}
+            bgOn={(() => {
+              try {
+                return $state.navbarCinta.scrollingPage;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return [];
                 }
-              })()
-            ).map((__plasmic_item_0, __plasmic_idx_0) => {
-              const currentItem = __plasmic_item_0;
-              const currentIndex = __plasmic_idx_0;
-              return (
-                <PlasmicLink__
-                  data-plasmic-name={"link"}
-                  data-plasmic-override={overrides.link}
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.__wab_text,
-                    sty.link
-                  )}
-                  component={Link}
-                  href={`/${(() => {
+                throw e;
+              }
+            })()}
+            className={classNames("__wab_instance", sty.navbarCinta)}
+            onScrollingPageChange={generateStateOnChangeProp($state, [
+              "navbarCinta",
+              "scrollingPage"
+            ])}
+            scrollingPage={generateStateValueProp($state, [
+              "navbarCinta",
+              "scrollingPage"
+            ])}
+          />
+
+          <section
+            className={classNames(projectcss.all, sty.section__xIwnE)}
+            id={"hero"}
+            onScroll={async event => {
+              const $steps = {};
+            }}
+          >
+            <div className={classNames(projectcss.all, sty.freeBox__ctjwt)}>
+              <h1
+                className={classNames(
+                  projectcss.all,
+                  projectcss.h1,
+                  projectcss.__wab_text,
+                  sty.h1__ke5B
+                )}
+              >
+                <React.Fragment>
+                  {(() => {
                     try {
-                      return currentItem.slug + "?to=tester";
+                      return window.scrollY;
                     } catch (e) {
                       if (
                         e instanceof TypeError ||
                         e?.plasmicType === "PlasmicUndefinedDataError"
                       ) {
-                        return "";
+                        return "Ngundang Gaya Anak Muda";
                       }
                       throw e;
                     }
-                  })()}`}
-                  key={currentIndex}
-                  platform={"nextjs"}
+                  })()}
+                </React.Fragment>
+              </h1>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__s6SeN
+                )}
+              >
+                {
+                  "Bentukcinta.com undangan online buat bikin kamu jadi kekinian \ud83d\udc96"
+                }
+              </div>
+              <Stack__
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox__kaYAs)}
+              >
+                <Button
+                  className={classNames("__wab_instance", sty.button__siyFq)}
+                  color={"blue"}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["updateNavbarCintaScrollingPage"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["navbarCinta", "scrollingPage"]
+                            },
+                            operation: 0,
+                            value: true
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateNavbarCintaScrollingPage"] != null &&
+                      typeof $steps["updateNavbarCintaScrollingPage"] ===
+                        "object" &&
+                      typeof $steps["updateNavbarCintaScrollingPage"].then ===
+                        "function"
+                    ) {
+                      $steps["updateNavbarCintaScrollingPage"] = await $steps[
+                        "updateNavbarCintaScrollingPage"
+                      ];
+                    }
+                  }}
+                  shape={"rounded"}
                 >
-                  <React.Fragment>
-                    {(() => {
-                      try {
-                        return currentItem.slug;
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return "";
-                        }
-                        throw e;
-                      }
-                    })()}
-                  </React.Fragment>
-                </PlasmicLink__>
-              );
-            })}
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___9LCzy
+                    )}
+                  >
+                    {"Buat undangan"}
+                  </div>
+                </Button>
+                <Button
+                  className={classNames("__wab_instance", sty.button__wUMb)}
+                  color={"link"}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__yBDpY
+                    )}
+                  >
+                    {"Pelajari Selengkapnya"}
+                  </div>
+                </Button>
+              </Stack__>
+            </div>
+          </section>
+          <section className={classNames(projectcss.all, sty.section__t0HBe)}>
+            <Stack__
+              as={"div"}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.freeBox__uQitH)}
+            >
+              <h1
+                className={classNames(
+                  projectcss.all,
+                  projectcss.h1,
+                  projectcss.__wab_text,
+                  sty.h1__vq3Ij
+                )}
+              >
+                {"Kenapa sih harus BentukCinta.com? \ud83c\udf1f"}
+              </h1>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__kOcv
+                )}
+              >
+                {
+                  "BentukCinta.com solusi buat kalian yang mau undangan unik, praktis, dan memorable. \nLet's make your wedding invitation lit and hit \ud83d\udd25\u2728"
+                }
+              </div>
+              <Stack__
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox__a8FLc)}
+              >
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__wpRth)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"500px"}
+                  loading={"lazy"}
+                  src={{
+                    src: "/plasmic/bentuk_cintav_3/images/cupidSmartphonepng2.png",
+                    fullWidth: 1024,
+                    fullHeight: 1024,
+                    aspectRatio: undefined
+                  }}
+                />
+
+                <div className={classNames(projectcss.all, sty.freeBox__pFmpW)}>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__f0Wo)}
+                  >
+                    <h4
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h4,
+                        projectcss.__wab_text,
+                        sty.h4___4FGo
+                      )}
+                    >
+                      {"\ud83d\udd50  Hemat Waktu"}
+                    </h4>
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__jdCzA)}
+                  >
+                    <h4
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h4,
+                        projectcss.__wab_text,
+                        sty.h4__jyPgP
+                      )}
+                    >
+                      {"\ud83e\udd11  Hemat Biaya"}
+                    </h4>
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox___4JgYl)}
+                  >
+                    <h4
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h4,
+                        projectcss.__wab_text,
+                        sty.h4__pozhf
+                      )}
+                    >
+                      {"\ud83d\udc8c  Praktis"}
+                    </h4>
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__pxe4U)}
+                  >
+                    <h4
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h4,
+                        projectcss.__wab_text,
+                        sty.h4___1XbCh
+                      )}
+                    >
+                      {"\ud83d\udcaa  Hemat Tenaga"}
+                    </h4>
+                  </div>
+                </div>
+              </Stack__>
+            </Stack__>
+          </section>
+          <section className={classNames(projectcss.all, sty.section___8Vfax)}>
+            <Stack__
+              as={"div"}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.freeBox___0Feu8)}
+            >
+              <h1
+                className={classNames(
+                  projectcss.all,
+                  projectcss.h1,
+                  projectcss.__wab_text,
+                  sty.h1__ye60T
+                )}
+              >
+                {"Fitur Undangan"}
+              </h1>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___20Xfi
+                )}
+              >
+                {
+                  "Bentuk cinta siap membantumu dengan sepenuh hati untuk ngundang pake cara baru"
+                }
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox__nnjbP)}>
+                <Stack__
+                  as={"div"}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.freeBox__yxjT)}
+                >
+                  <InfoSquareSvgrepoComsvgIcon
+                    className={classNames(projectcss.all, sty.svg__lfkJk)}
+                    role={"img"}
+                  />
+
+                  <h4
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h4,
+                      projectcss.__wab_text,
+                      sty.h4__o2ZVc
+                    )}
+                  >
+                    {"Informasi Undangan"}
+                  </h4>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__uu5Dg
+                    )}
+                  >
+                    {
+                      "Memberikan informasi detail pasangan dan lokasi waktu upacara."
+                    }
+                  </div>
+                </Stack__>
+                <Stack__
+                  as={"div"}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.freeBox__shP0E)}
+                >
+                  <CameraSvgrepoComsvgIcon
+                    className={classNames(projectcss.all, sty.svg__vgg2S)}
+                    role={"img"}
+                  />
+
+                  <h4
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h4,
+                      projectcss.__wab_text,
+                      sty.h4__rw9TK
+                    )}
+                  >
+                    {"Gallery Photo dan Video"}
+                  </h4>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__eiZJa
+                    )}
+                  >
+                    {
+                      "Berbagi moment indah terbaik kalian dengan foto dan video yang berkualitas."
+                    }
+                  </div>
+                </Stack__>
+                <Stack__
+                  as={"div"}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.freeBox___1TLsP)}
+                >
+                  <PointOnMapSvgrepoComsvgIcon
+                    className={classNames(projectcss.all, sty.svg__iwEdy)}
+                    role={"img"}
+                  />
+
+                  <h4
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h4,
+                      projectcss.__wab_text,
+                      sty.h4___5WlRc
+                    )}
+                  >
+                    {"Peta Lokasi Upacara"}
+                  </h4>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__ajuB6
+                    )}
+                  >
+                    {
+                      "Terhubung dengan google map, untuk mempermudah mencari lokasi."
+                    }
+                  </div>
+                </Stack__>
+                <Stack__
+                  as={"div"}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.freeBox__atfaK)}
+                >
+                  <ChatUnreadSvgrepoComsvgIcon
+                    className={classNames(projectcss.all, sty.svg__f4OYq)}
+                    role={"img"}
+                  />
+
+                  <h4
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h4,
+                      projectcss.__wab_text,
+                      sty.h4__t26Si
+                    )}
+                  >
+                    {"Kolom Komentar"}
+                  </h4>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__qUlwJ
+                    )}
+                  >
+                    {
+                      "Tamu dapat memberi ucapan selamat, doa restu untuk kalian yang berbahagia."
+                    }
+                  </div>
+                </Stack__>
+                <Stack__
+                  as={"div"}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.freeBox__tnYsz)}
+                >
+                  <VolumeLoudSvgrepoComsvgIcon
+                    className={classNames(projectcss.all, sty.svg__uvkR2)}
+                    role={"img"}
+                  />
+
+                  <h4
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h4,
+                      projectcss.__wab_text,
+                      sty.h4__d09UU
+                    )}
+                  >
+                    {"Background Lagu"}
+                  </h4>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__ceo6
+                    )}
+                  >
+                    {
+                      "Ceriakan undangan pernikahanmu dengan latar music favorit kalian."
+                    }
+                  </div>
+                </Stack__>
+                <Stack__
+                  as={"div"}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.freeBox__g6Cdl)}
+                >
+                  <ChatRoundUnreadSvgrepoComsvgIcon
+                    className={classNames(projectcss.all, sty.svg__oVskv)}
+                    role={"img"}
+                  />
+
+                  <h4
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h4,
+                      projectcss.__wab_text,
+                      sty.h4__eQym2
+                    )}
+                  >
+                    {"Layanan WhatsApp"}
+                  </h4>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__etw5N
+                    )}
+                  >
+                    {
+                      "Sewaktu-waktu tamu ingin info lebih lanjut bisa chat via button WhatsApp."
+                    }
+                  </div>
+                </Stack__>
+              </div>
+            </Stack__>
+          </section>
+          <section className={classNames(projectcss.all, sty.section__pguqT)}>
+            <Stack__
+              as={"div"}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.freeBox__yOv5U)}
+            >
+              <h1
+                className={classNames(
+                  projectcss.all,
+                  projectcss.h1,
+                  projectcss.__wab_text,
+                  sty.h1__l0WW
+                )}
+              >
+                {"Harga"}
+              </h1>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__eje6C
+                )}
+              >
+                {"Berikut adalah paket yang bisa kamu pilih"}
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox__xNvwl)}>
+                <Stack__
+                  as={"div"}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.freeBox___2RoHd)}
+                >
+                  <Stack__
+                    as={"div"}
+                    hasGap={true}
+                    className={classNames(projectcss.all, sty.freeBox__pwfP9)}
+                  >
+                    <h4
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h4,
+                        projectcss.__wab_text,
+                        sty.h4__wyYdp
+                      )}
+                    >
+                      {"Dasar"}
+                    </h4>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__cTCbD
+                      )}
+                    >
+                      <React.Fragment>
+                        <span
+                          className={
+                            "plasmic_default__all plasmic_default__span"
+                          }
+                          style={{ textDecorationLine: "line-through" }}
+                        >
+                          {"Rp 100.000"}
+                        </span>
+                        <React.Fragment>{" Gratis"}</React.Fragment>
+                      </React.Fragment>
+                    </div>
+                  </Stack__>
+                  <Stack__
+                    as={"div"}
+                    hasGap={true}
+                    className={classNames(projectcss.all, sty.freeBox__oFHcd)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__fehvs
+                      )}
+                    >
+                      {"\u2705  Pilih Tema Standar"}
+                    </div>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__iovWz
+                      )}
+                    >
+                      {"\u2705  1 Foto Sampul"}
+                    </div>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__lKs0C
+                      )}
+                    >
+                      {"\u2705  Foto Galery max. 4 Foto"}
+                    </div>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__vb0DI
+                      )}
+                    >
+                      {"\u2705  Peta Lokasi"}
+                    </div>
+                  </Stack__>
+                  <Button
+                    className={classNames("__wab_instance", sty.button__aFtUt)}
+                    color={"blue"}
+                    shape={"rounded"}
+                  >
+                    {"Pesan Sekarang"}
+                  </Button>
+                </Stack__>
+                <Stack__
+                  as={"div"}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.freeBox___4Hjeg)}
+                >
+                  <Stack__
+                    as={"div"}
+                    hasGap={true}
+                    className={classNames(projectcss.all, sty.freeBox__in566)}
+                  >
+                    <h4
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h4,
+                        projectcss.__wab_text,
+                        sty.h4__uFYyf
+                      )}
+                    >
+                      {"Premium"}
+                    </h4>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__oPOrv
+                      )}
+                    >
+                      <React.Fragment>
+                        <span
+                          className={
+                            "plasmic_default__all plasmic_default__span"
+                          }
+                          style={{ textDecorationLine: "line-through" }}
+                        >
+                          {"Rp 200.000"}
+                        </span>
+                        <React.Fragment>{" Rp 100.000"}</React.Fragment>
+                      </React.Fragment>
+                    </div>
+                  </Stack__>
+                  <Stack__
+                    as={"div"}
+                    hasGap={true}
+                    className={classNames(projectcss.all, sty.freeBox__zpGVr)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text___3Fcv
+                      )}
+                    >
+                      {"\u2705  Pilih Tema Standar"}
+                    </div>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__bUz4B
+                      )}
+                    >
+                      {"\u2705  Foto Sampul slideshow"}
+                    </div>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__uoHba
+                      )}
+                    >
+                      {"\u2705  Unlimited Foto Galery"}
+                    </div>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__tsC2R
+                      )}
+                    >
+                      {"\u2705  Video Gallery"}
+                    </div>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__ikqH
+                      )}
+                    >
+                      {"\u2705  Background Lagu"}
+                    </div>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__p5HDi
+                      )}
+                    >
+                      {"\u2705  Whatsapp"}
+                    </div>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__o9Rop
+                      )}
+                    >
+                      {"\u2705  Peta Lokasi"}
+                    </div>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text___6Uzyn
+                      )}
+                    >
+                      {"\u2705  Komentar"}
+                    </div>
+                  </Stack__>
+                  <Button
+                    className={classNames("__wab_instance", sty.button__eLtI)}
+                    color={"white"}
+                    shape={"rounded"}
+                  >
+                    {"Pesan Sekarang"}
+                  </Button>
+                </Stack__>
+                <Stack__
+                  as={"div"}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.freeBox__weT2X)}
+                >
+                  <Stack__
+                    as={"div"}
+                    hasGap={true}
+                    className={classNames(projectcss.all, sty.freeBox__rkWGg)}
+                  >
+                    <h4
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h4,
+                        projectcss.__wab_text,
+                        sty.h4__bdUJx
+                      )}
+                    >
+                      {"Kustom"}
+                    </h4>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__ochpF
+                      )}
+                    >
+                      {"Hubungi Kami"}
+                    </div>
+                  </Stack__>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__cPv8V
+                    )}
+                  >
+                    {
+                      "Mari kita bicarraakan dari hati ke hati siapa tau jogoh kan?"
+                    }
+                  </div>
+                  <Button
+                    className={classNames("__wab_instance", sty.button___0Rfvj)}
+                    color={"blue"}
+                    shape={"rounded"}
+                  >
+                    {"Pesan Sekarang"}
+                  </Button>
+                </Stack__>
+              </div>
+            </Stack__>
+          </section>
+          <section className={classNames(projectcss.all, sty.section__q7JtN)}>
+            <Stack__
+              as={"div"}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.freeBox__b70G6)}
+            >
+              <h1
+                className={classNames(
+                  projectcss.all,
+                  projectcss.h1,
+                  projectcss.__wab_text,
+                  sty.h1__dtIn
+                )}
+              >
+                {"Yuk bisa yuk, kita onlinekan"}
+              </h1>
+              <h4
+                className={classNames(
+                  projectcss.all,
+                  projectcss.h4,
+                  projectcss.__wab_text,
+                  sty.h4__ft8Ru
+                )}
+              >
+                {"Upgrade Caramu Ngundang, Pake Undangan Online Saja!"}
+              </h4>
+              <Button
+                className={classNames("__wab_instance", sty.button__wAk7I)}
+                color={"white"}
+                shape={"rounded"}
+              >
+                {"Pesan Sekarang"}
+              </Button>
+            </Stack__>
+          </section>
+          <section className={classNames(projectcss.all, sty.section__x4PJe)}>
+            <Stack__
+              as={"div"}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.freeBox___0R2SD)}
+            >
+              <Stack__
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox__rjMy0)}
+              >
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__lVg4T)}
+                  displayHeight={"32px"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  loading={"lazy"}
+                  src={{
+                    src: "/plasmic/bentuk_cintav_3/images/logowitewebp.webp",
+                    fullWidth: 640,
+                    fullHeight: 129,
+                    aspectRatio: undefined
+                  }}
+                />
+
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__crZc
+                  )}
+                >
+                  {
+                    "Jasa undangan pernikahan digital / undangan pernikahan online di Bali. Membantu untuk memudahakan urusan undangan pernikahan anda hemat biaya, hemat tenaga dan hemat waktu."
+                  }
+                </div>
+              </Stack__>
+              <Stack__
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox__hk9XY)}
+              >
+                <h3
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.h3,
+                    projectcss.__wab_text,
+                    sty.h3__dbysq
+                  )}
+                >
+                  {"Link"}
+                </h3>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__pKvqt
+                  )}
+                >
+                  {"Beranda"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__f80Mm
+                  )}
+                >
+                  {"Tentang Kami"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__pho8C
+                  )}
+                >
+                  {"Fasilitas"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__n0YDn
+                  )}
+                >
+                  {"Harga"}
+                </div>
+              </Stack__>
+              <Stack__
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox__pKpxl)}
+              >
+                <h3
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.h3,
+                    projectcss.__wab_text,
+                    sty.h3__nOdH
+                  )}
+                >
+                  {"Alamat"}
+                </h3>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___78WIf
+                  )}
+                >
+                  {
+                    "Jln. Ngurah Rai, Gg. XX, No. 9X, Br. Pande - Blahbatuh, Gianyar-Bali\n+62 819-1656-7373\n"
+                  }
+                </div>
+              </Stack__>
+            </Stack__>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text___3E85
+              )}
+            >
+              {"Build with \ud83d\udc96 by Bentukcinta.com"}
+            </div>
           </section>
         </div>
       </div>
@@ -261,19 +1155,15 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "section", "h1", "link"],
-  section: ["section", "h1", "link"],
-  h1: ["h1"],
-  link: ["link"]
+  root: ["root", "navbarCinta"],
+  navbarCinta: ["navbarCinta"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  section: "section";
-  h1: "h1";
-  link: "a";
+  navbarCinta: typeof NavbarCinta;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -336,9 +1226,7 @@ export const PlasmicHomepage = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    section: makeNodeComponent("section"),
-    h1: makeNodeComponent("h1"),
-    link: makeNodeComponent("link"),
+    navbarCinta: makeNodeComponent("navbarCinta"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,
