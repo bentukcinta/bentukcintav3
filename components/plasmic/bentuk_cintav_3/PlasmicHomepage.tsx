@@ -66,6 +66,7 @@ import {
 } from "@plasmicapp/react-web/lib/data-sources";
 
 import NavbarCinta from "../../NavbarCinta"; // plasmic-import: sirgQiSNN0bg/component
+import { Reveal } from "@plasmicpkgs/react-awesome-reveal";
 import Button from "../../Button"; // plasmic-import: 41nNSCEHS4Ht/component
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
@@ -209,19 +210,7 @@ function PlasmicHomepage__RenderFunc(props: {
           <NavbarCinta
             data-plasmic-name={"navbarCinta"}
             data-plasmic-override={overrides.navbarCinta}
-            bgOn={(() => {
-              try {
-                return $state.navbarCinta.scrollingPage;
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return [];
-                }
-                throw e;
-              }
-            })()}
+            bgOn={true}
             className={classNames("__wab_instance", sty.navbarCinta)}
             onScrollingPageChange={generateStateOnChangeProp($state, [
               "navbarCinta",
@@ -233,239 +222,268 @@ function PlasmicHomepage__RenderFunc(props: {
             ])}
           />
 
-          <section
-            className={classNames(projectcss.all, sty.section__xIwnE)}
-            id={"hero"}
-            onScroll={async event => {
-              const $steps = {};
-            }}
-          >
+          <section className={classNames(projectcss.all, sty.section__xIwnE)}>
             <div className={classNames(projectcss.all, sty.freeBox__ctjwt)}>
-              <h1
-                className={classNames(
-                  projectcss.all,
-                  projectcss.h1,
-                  projectcss.__wab_text,
-                  sty.h1__ke5B
-                )}
+              <Reveal
+                cascade={true}
+                className={classNames("__wab_instance", sty.reveal__i9Tbd)}
+                direction={"up"}
+                reverse={false}
+                triggerOnce={false}
               >
-                <React.Fragment>
-                  {(() => {
-                    try {
-                      return window.scrollY;
-                    } catch (e) {
+                <h1
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.h1,
+                    projectcss.__wab_text,
+                    sty.h1__ke5B
+                  )}
+                >
+                  {"Ngundang Gaya Anak Muda"}
+                </h1>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__s6SeN
+                  )}
+                >
+                  {
+                    "Bentukcinta.com undangan online buat bikin kamu jadi kekinian \ud83d\udc96"
+                  }
+                </div>
+                <Stack__
+                  as={"div"}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.freeBox__kaYAs)}
+                >
+                  <Button
+                    className={classNames("__wab_instance", sty.button__siyFq)}
+                    color={"blue"}
+                    link={
+                      "https://wa.me/081916567373?text=halo bentukcinta.com saya tertarik untuk bikin undangan"
+                    }
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["updateNavbarCintaScrollingPage"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              variable: {
+                                objRoot: $state,
+                                variablePath: ["navbarCinta", "scrollingPage"]
+                              },
+                              operation: 0,
+                              value: true
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              $stateSet(objRoot, variablePath, value);
+                              return value;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
                       if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
+                        $steps["updateNavbarCintaScrollingPage"] != null &&
+                        typeof $steps["updateNavbarCintaScrollingPage"] ===
+                          "object" &&
+                        typeof $steps["updateNavbarCintaScrollingPage"].then ===
+                          "function"
                       ) {
-                        return "Ngundang Gaya Anak Muda";
+                        $steps["updateNavbarCintaScrollingPage"] = await $steps[
+                          "updateNavbarCintaScrollingPage"
+                        ];
                       }
-                      throw e;
-                    }
-                  })()}
-                </React.Fragment>
-              </h1>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__s6SeN
-                )}
-              >
-                {
-                  "Bentukcinta.com undangan online buat bikin kamu jadi kekinian \ud83d\udc96"
-                }
-              </div>
-              <Stack__
-                as={"div"}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.freeBox__kaYAs)}
-              >
-                <Button
-                  className={classNames("__wab_instance", sty.button__siyFq)}
-                  color={"blue"}
-                  onClick={async event => {
-                    const $steps = {};
-
-                    $steps["updateNavbarCintaScrollingPage"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            variable: {
-                              objRoot: $state,
-                              variablePath: ["navbarCinta", "scrollingPage"]
-                            },
-                            operation: 0,
-                            value: true
-                          };
-                          return (({
-                            variable,
-                            value,
-                            startIndex,
-                            deleteCount
-                          }) => {
-                            if (!variable) {
-                              return;
-                            }
-                            const { objRoot, variablePath } = variable;
-
-                            $stateSet(objRoot, variablePath, value);
-                            return value;
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["updateNavbarCintaScrollingPage"] != null &&
-                      typeof $steps["updateNavbarCintaScrollingPage"] ===
-                        "object" &&
-                      typeof $steps["updateNavbarCintaScrollingPage"].then ===
-                        "function"
-                    ) {
-                      $steps["updateNavbarCintaScrollingPage"] = await $steps[
-                        "updateNavbarCintaScrollingPage"
-                      ];
-                    }
-                  }}
-                  shape={"rounded"}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___9LCzy
-                    )}
+                    }}
+                    shape={"rounded"}
                   >
-                    {"Buat undangan"}
-                  </div>
-                </Button>
-                <Button
-                  className={classNames("__wab_instance", sty.button__wUMb)}
-                  color={"link"}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__yBDpY
-                    )}
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text___9LCzy
+                      )}
+                    >
+                      {"Buat undangan"}
+                    </div>
+                  </Button>
+                  <Button
+                    className={classNames("__wab_instance", sty.button__wUMb)}
+                    color={"link"}
+                    link={"#about"}
                   >
-                    {"Pelajari Selengkapnya"}
-                  </div>
-                </Button>
-              </Stack__>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__yBDpY
+                      )}
+                    >
+                      {"Pelajari Selengkapnya"}
+                    </div>
+                  </Button>
+                </Stack__>
+              </Reveal>
             </div>
           </section>
-          <section className={classNames(projectcss.all, sty.section__t0HBe)}>
+          <section
+            className={classNames(projectcss.all, sty.section__t0HBe)}
+            id={"about"}
+          >
             <Stack__
               as={"div"}
               hasGap={true}
               className={classNames(projectcss.all, sty.freeBox__uQitH)}
             >
-              <h1
-                className={classNames(
-                  projectcss.all,
-                  projectcss.h1,
-                  projectcss.__wab_text,
-                  sty.h1__vq3Ij
-                )}
+              <Reveal
+                cascade={true}
+                className={classNames("__wab_instance", sty.reveal__hufnd)}
+                direction={"down"}
+                triggerOnce={false}
               >
-                {"Kenapa sih harus BentukCinta.com? \ud83c\udf1f"}
-              </h1>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__kOcv
-                )}
-              >
-                {
-                  "BentukCinta.com solusi buat kalian yang mau undangan unik, praktis, dan memorable. \nLet's make your wedding invitation lit and hit \ud83d\udd25\u2728"
-                }
-              </div>
+                <Stack__
+                  as={"div"}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.freeBox__mer0X)}
+                >
+                  <h1
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h1,
+                      projectcss.__wab_text,
+                      sty.h1__vq3Ij
+                    )}
+                  >
+                    {"Kenapa sih harus BentukCinta.com? \ud83c\udf1f"}
+                  </h1>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__kOcv
+                    )}
+                  >
+                    {
+                      "BentukCinta.com solusi buat kalian yang mau undangan unik, praktis, dan memorable. \nLet's make your wedding invitation lit and hit \ud83d\udd25\u2728"
+                    }
+                  </div>
+                </Stack__>
+              </Reveal>
               <Stack__
                 as={"div"}
                 hasGap={true}
                 className={classNames(projectcss.all, sty.freeBox__a8FLc)}
               >
-                <PlasmicImg__
-                  alt={""}
-                  className={classNames(sty.img__wpRth)}
-                  displayHeight={"auto"}
-                  displayMaxHeight={"none"}
-                  displayMaxWidth={"100%"}
-                  displayMinHeight={"0"}
-                  displayMinWidth={"0"}
-                  displayWidth={"500px"}
-                  loading={"lazy"}
-                  src={{
-                    src: "/plasmic/bentuk_cintav_3/images/cupidSmartphonepng2.png",
-                    fullWidth: 1024,
-                    fullHeight: 1024,
-                    aspectRatio: undefined
-                  }}
-                />
-
-                <div className={classNames(projectcss.all, sty.freeBox__pFmpW)}>
+                <Reveal
+                  cascade={false}
+                  className={classNames("__wab_instance", sty.reveal__bb3LT)}
+                  direction={"left"}
+                  triggerOnce={false}
+                >
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__wpRth)}
+                    displayHeight={"auto"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"500px"}
+                    loading={"lazy"}
+                    src={{
+                      src: "/plasmic/bentuk_cintav_3/images/cupidSmartphonepng2.png",
+                      fullWidth: 1024,
+                      fullHeight: 1024,
+                      aspectRatio: undefined
+                    }}
+                  />
+                </Reveal>
+                <Reveal
+                  cascade={true}
+                  className={classNames("__wab_instance", sty.reveal__ge6H)}
+                  direction={"right"}
+                  triggerOnce={false}
+                >
                   <div
-                    className={classNames(projectcss.all, sty.freeBox__f0Wo)}
+                    className={classNames(projectcss.all, sty.freeBox__pFmpW)}
                   >
-                    <h4
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__f0Wo)}
+                    >
+                      <h4
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.h4,
+                          projectcss.__wab_text,
+                          sty.h4___4FGo
+                        )}
+                      >
+                        {"\ud83d\udd50  Hemat Waktu"}
+                      </h4>
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__jdCzA)}
+                    >
+                      <h4
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.h4,
+                          projectcss.__wab_text,
+                          sty.h4__jyPgP
+                        )}
+                      >
+                        {"\ud83e\udd11  Hemat Biaya"}
+                      </h4>
+                    </div>
+                    <div
                       className={classNames(
                         projectcss.all,
-                        projectcss.h4,
-                        projectcss.__wab_text,
-                        sty.h4___4FGo
+                        sty.freeBox___4JgYl
                       )}
                     >
-                      {"\ud83d\udd50  Hemat Waktu"}
-                    </h4>
-                  </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__jdCzA)}
-                  >
-                    <h4
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.h4,
-                        projectcss.__wab_text,
-                        sty.h4__jyPgP
-                      )}
+                      <h4
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.h4,
+                          projectcss.__wab_text,
+                          sty.h4__pozhf
+                        )}
+                      >
+                        {"\ud83d\udc8c  Praktis"}
+                      </h4>
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__pxe4U)}
                     >
-                      {"\ud83e\udd11  Hemat Biaya"}
-                    </h4>
+                      <h4
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.h4,
+                          projectcss.__wab_text,
+                          sty.h4___1XbCh
+                        )}
+                      >
+                        {"\ud83d\udcaa  Hemat Tenaga"}
+                      </h4>
+                    </div>
                   </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox___4JgYl)}
-                  >
-                    <h4
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.h4,
-                        projectcss.__wab_text,
-                        sty.h4__pozhf
-                      )}
-                    >
-                      {"\ud83d\udc8c  Praktis"}
-                    </h4>
-                  </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__pxe4U)}
-                  >
-                    <h4
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.h4,
-                        projectcss.__wab_text,
-                        sty.h4___1XbCh
-                      )}
-                    >
-                      {"\ud83d\udcaa  Hemat Tenaga"}
-                    </h4>
-                  </div>
-                </div>
+                </Reveal>
               </Stack__>
             </Stack__>
           </section>
-          <section className={classNames(projectcss.all, sty.section___8Vfax)}>
+          <section
+            className={classNames(projectcss.all, sty.section___8Vfax)}
+            id={"fitur"}
+          >
             <Stack__
               as={"div"}
               hasGap={true}
@@ -688,7 +706,10 @@ function PlasmicHomepage__RenderFunc(props: {
               </div>
             </Stack__>
           </section>
-          <section className={classNames(projectcss.all, sty.section__pguqT)}>
+          <section
+            className={classNames(projectcss.all, sty.section__pguqT)}
+            id={"price"}
+          >
             <Stack__
               as={"div"}
               hasGap={true}
@@ -799,6 +820,9 @@ function PlasmicHomepage__RenderFunc(props: {
                   <Button
                     className={classNames("__wab_instance", sty.button__aFtUt)}
                     color={"blue"}
+                    link={
+                      "https://wa.me/081916567373?text=halo bentukcinta.com saya tertarik untuk bikin undangan standar"
+                    }
                     shape={"rounded"}
                   >
                     {"Pesan Sekarang"}
@@ -925,6 +949,9 @@ function PlasmicHomepage__RenderFunc(props: {
                   <Button
                     className={classNames("__wab_instance", sty.button__eLtI)}
                     color={"white"}
+                    link={
+                      "https://wa.me/081916567373?text=halo bentukcinta.com saya tertarik untuk bikin undangan premium"
+                    }
                     shape={"rounded"}
                   >
                     {"Pesan Sekarang"}
@@ -974,6 +1001,9 @@ function PlasmicHomepage__RenderFunc(props: {
                   <Button
                     className={classNames("__wab_instance", sty.button___0Rfvj)}
                     color={"blue"}
+                    link={
+                      "https://wa.me/081916567373?text=halo bentukcinta.com saya tertarik untuk bikin undangan kustom"
+                    }
                     shape={"rounded"}
                   >
                     {"Pesan Sekarang"}
@@ -1011,6 +1041,9 @@ function PlasmicHomepage__RenderFunc(props: {
               <Button
                 className={classNames("__wab_instance", sty.button__wAk7I)}
                 color={"white"}
+                link={
+                  "https://wa.me/081916567373?text=halo bentukcinta.com saya tertarik untuk bikin undangan"
+                }
                 shape={"rounded"}
               >
                 {"Pesan Sekarang"}

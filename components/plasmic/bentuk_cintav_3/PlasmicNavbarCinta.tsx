@@ -240,7 +240,7 @@ function PlasmicNavbarCinta__RenderFunc(props: {
                 sty.link__uZmYi
               )}
               component={Link}
-              href={"/"}
+              href={"#"}
               platform={"nextjs"}
             >
               {"Home"}
@@ -253,7 +253,7 @@ function PlasmicNavbarCinta__RenderFunc(props: {
                 sty.link__raxY
               )}
               component={Link}
-              href={"/"}
+              href={"#about"}
               platform={"nextjs"}
             >
               {"Tentang Kami"}
@@ -266,7 +266,7 @@ function PlasmicNavbarCinta__RenderFunc(props: {
                 sty.link___7HWgk
               )}
               component={Link}
-              href={"/"}
+              href={"#fitur"}
               platform={"nextjs"}
             >
               {"Fitur"}
@@ -279,7 +279,7 @@ function PlasmicNavbarCinta__RenderFunc(props: {
                 sty.link__nIkHi
               )}
               component={Link}
-              href={"/"}
+              href={"#price"}
               platform={"nextjs"}
             >
               {"Harga"}
@@ -289,6 +289,9 @@ function PlasmicNavbarCinta__RenderFunc(props: {
               data-plasmic-override={overrides.button}
               className={classNames("__wab_instance", sty.button)}
               color={"blue"}
+              link={
+                "https://wa.me/081916567373?text=halo bentukcinta.com saya tertarik untuk bikin undangan"
+              }
               shape={"rounded"}
               size={"compact"}
             >
