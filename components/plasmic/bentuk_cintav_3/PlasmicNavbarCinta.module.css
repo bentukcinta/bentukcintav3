@@ -29,9 +29,13 @@
   align-items: center;
   object-fit: cover;
   background: none;
-  max-width: 800px;
   min-width: 0;
   padding: 16px;
+}
+.navigationBarbgOn:global(.__wab_instance) {
+  width: 100%;
+  max-width: auto;
+  min-width: 0;
 }
 .link___0RIzi {
   display: flex;

@@ -85,6 +85,11 @@
   position: relative;
   color: #ffffff;
 }
+@media (min-width: 0px) and (max-width: 768px) {
+  .reveal__i9Tbd:global(.__wab_instance) {
+    text-align: center;
+  }
+}
 .h1__ke5B {
   width: 100%;
   height: auto;

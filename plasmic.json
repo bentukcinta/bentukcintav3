@@ -906,6 +906,11 @@
           "id": "yQog-l-Q6POG",
           "name": "logowite.webp",
           "filePath": "../public/plasmic/bentuk_cintav_3/images/logowitewebp.webp"
+        },
+        {
+          "id": "fQ9peZlZBkMA",
+          "name": "og-bentukcinta-min.png",
+          "filePath": "../public/plasmic/bentuk_cintav_3/images/ogBentukcintaMinpng.png"
         }
       ],
       "indirect": false,
