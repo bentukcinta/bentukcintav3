@@ -16,6 +16,9 @@
 }
 .rootbgOn {
   background: #250744;
+  filter: none;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 .navigationBar:global(.__wab_instance) {
   width: 100%;

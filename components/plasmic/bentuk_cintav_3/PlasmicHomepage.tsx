@@ -320,6 +320,7 @@ function PlasmicHomepage__RenderFunc(props: {
                     className={classNames("__wab_instance", sty.button__wUMb)}
                     color={"link"}
                     link={"#about"}
+                    shape={"rounded"}
                   >
                     <div
                       className={classNames(
@@ -1106,42 +1107,58 @@ function PlasmicHomepage__RenderFunc(props: {
                 >
                   {"Link"}
                 </h3>
-                <div
+                <PlasmicLink__
                   className={classNames(
                     projectcss.all,
+                    projectcss.a,
                     projectcss.__wab_text,
-                    sty.text__pKvqt
+                    sty.link__pKvqt
                   )}
+                  component={Link}
+                  href={`/`}
+                  platform={"nextjs"}
                 >
                   {"Beranda"}
-                </div>
-                <div
+                </PlasmicLink__>
+                <PlasmicLink__
                   className={classNames(
                     projectcss.all,
+                    projectcss.a,
                     projectcss.__wab_text,
-                    sty.text__f80Mm
+                    sty.link__f80Mm
                   )}
+                  component={Link}
+                  href={"#about"}
+                  platform={"nextjs"}
                 >
                   {"Tentang Kami"}
-                </div>
-                <div
+                </PlasmicLink__>
+                <PlasmicLink__
                   className={classNames(
                     projectcss.all,
+                    projectcss.a,
                     projectcss.__wab_text,
-                    sty.text__pho8C
+                    sty.link__pho8C
                   )}
+                  component={Link}
+                  href={"#fitur"}
+                  platform={"nextjs"}
                 >
                   {"Fasilitas"}
-                </div>
-                <div
+                </PlasmicLink__>
+                <PlasmicLink__
                   className={classNames(
                     projectcss.all,
+                    projectcss.a,
                     projectcss.__wab_text,
-                    sty.text__n0YDn
+                    sty.link__n0YDn
                   )}
+                  component={Link}
+                  href={"#price"}
+                  platform={"nextjs"}
                 >
                   {"Harga"}
-                </div>
+                </PlasmicLink__>
               </Stack__>
               <Stack__
                 as={"div"}

@@ -215,11 +215,15 @@ function PlasmicNavbarCinta__RenderFunc(props: {
             />
           </PlasmicLink__>
         }
-        className={classNames("__wab_instance", sty.navigationBar)}
+        className={classNames("__wab_instance", sty.navigationBar, {
+          [sty.navigationBarbgOn]: hasVariant($state, "bgOn", "bgOn")
+        })}
         closeButton={
           <PlasmicImg__
             alt={""}
-            className={classNames(sty.img__z0GhD)}
+            className={classNames(sty.img__z0GhD, {
+              [sty.imgbgOn__z0GhD19Dm]: hasVariant($state, "bgOn", "bgOn")
+            })}
             displayHeight={"auto"}
             displayMaxHeight={"none"}
             displayMaxWidth={"none"}
