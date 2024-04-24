@@ -178,7 +178,20 @@ function PlasmicThemeSelector__RenderFunc(props: {
         path: "theme3.tmp1To",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => "yono"
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return $state.to;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return undefined;
+              }
+              throw e;
+            }
+          })()
       }
     ],
     [$props, $ctx, $refs]
@@ -246,7 +259,7 @@ function PlasmicThemeSelector__RenderFunc(props: {
       ) : null}
       {(() => {
         try {
-          return $props.theme == "theme1";
+          return $props.theme == "theme3";
         } catch (e) {
           if (
             e instanceof TypeError ||
@@ -265,6 +278,19 @@ function PlasmicThemeSelector__RenderFunc(props: {
             "theme3",
             "tmp1To"
           ])}
+          slug={(() => {
+            try {
+              return $props.selectorSlug;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return undefined;
+              }
+              throw e;
+            }
+          })()}
           tmp1To={generateStateValueProp($state, ["theme3", "tmp1To"])}
         />
       ) : null}
