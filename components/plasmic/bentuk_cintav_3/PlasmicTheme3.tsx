@@ -79,9 +79,15 @@ export const PlasmicTheme3__VariantProps = new Array<VariantPropType>();
 
 export type PlasmicTheme3__ArgsType = {
   undangan?: any;
+  slug?: string;
+  tmp1To?: string;
 };
 type ArgPropType = keyof PlasmicTheme3__ArgsType;
-export const PlasmicTheme3__ArgProps = new Array<ArgPropType>("undangan");
+export const PlasmicTheme3__ArgProps = new Array<ArgPropType>(
+  "undangan",
+  "slug",
+  "tmp1To"
+);
 
 export type PlasmicTheme3__OverridesType = {
   root?: Flex__<"div">;
@@ -93,6 +99,8 @@ export type PlasmicTheme3__OverridesType = {
 
 export interface DefaultTheme3Props {
   undangan?: any;
+  slug?: string;
+  tmp1To?: string;
   className?: string;
 }
 

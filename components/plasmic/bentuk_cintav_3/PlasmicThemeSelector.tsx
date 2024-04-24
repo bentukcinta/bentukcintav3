@@ -60,6 +60,7 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import Theme1 from "../../Theme1"; // plasmic-import: a3bFpMTS7U_s/component
+import Theme3 from "../../Theme3"; // plasmic-import: IWuoszfrncHV/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -92,6 +93,7 @@ export const PlasmicThemeSelector__ArgProps = new Array<ArgPropType>(
 export type PlasmicThemeSelector__OverridesType = {
   root?: Flex__<"div">;
   theme1?: Flex__<typeof Theme1>;
+  theme3?: Flex__<typeof Theme3>;
 };
 
 export interface DefaultThemeSelectorProps {
@@ -236,13 +238,46 @@ function PlasmicThemeSelector__RenderFunc(props: {
           tmp1To={generateStateValueProp($state, ["theme1", "tmp1To"])}
         />
       ) : null}
+      {(() => {
+        try {
+          return $props.theme == "theme3";
+        } catch (e) {
+          if (
+            e instanceof TypeError ||
+            e?.plasmicType === "PlasmicUndefinedDataError"
+          ) {
+            return true;
+          }
+          throw e;
+        }
+      })() ? (
+        <Theme3
+          data-plasmic-name={"theme3"}
+          data-plasmic-override={overrides.theme3}
+          className={classNames("__wab_instance", sty.theme3)}
+          slug={(() => {
+            try {
+              return $props.selectorSlug;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return undefined;
+              }
+              throw e;
+            }
+          })()}
+        />
+      ) : null}
     </div>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root", "theme1"],
-  theme1: ["theme1"]
+  root: ["root", "theme1", "theme3"],
+  theme1: ["theme1"],
+  theme3: ["theme3"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -250,6 +285,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   theme1: typeof Theme1;
+  theme3: typeof Theme3;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -313,6 +349,7 @@ export const PlasmicThemeSelector = Object.assign(
   {
     // Helper components rendering sub-elements
     theme1: makeNodeComponent("theme1"),
+    theme3: makeNodeComponent("theme3"),
 
     // Metadata about props expected for PlasmicThemeSelector
     internalVariantProps: PlasmicThemeSelector__VariantProps,
