@@ -126,7 +126,7 @@ function PlasmicThemeSelector__RenderFunc(props: {
       Object.assign(
         {
           theme: "theme1",
-          selectorSlug: "yantoyanti"
+          selectorSlug: "gupastephanie"
         },
         props.args
       ),
