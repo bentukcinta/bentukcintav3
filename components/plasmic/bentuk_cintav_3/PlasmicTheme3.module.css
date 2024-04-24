@@ -1,0 +1,118 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  justify-content: flex-start;
+  align-items: center;
+  background: #f6f6f6;
+  min-width: 0;
+}
+.section {
+  display: grid;
+  position: relative;
+  align-content: flex-start;
+  justify-items: center;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  min-width: 0;
+  grid-template-columns:
+    var(--plsmc-viewport-gap) 1fr minmax(0, var(--plsmc-wide-chunk))
+    min(
+      var(--plsmc-standard-width),
+      calc(100% - var(--plsmc-viewport-gap) - var(--plsmc-viewport-gap))
+    )
+    minmax(0, var(--plsmc-wide-chunk)) 1fr var(--plsmc-viewport-gap);
+}
+.section > * {
+  grid-column: 4;
+}
+.freeBox__yvZ8F {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  min-width: 0;
+}
+.img__mnS5F {
+  position: relative;
+  object-fit: cover;
+  max-width: 100%;
+}
+.img__mnS5F > picture > img {
+  object-fit: cover;
+}
+.freeBox__fx08A {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  min-width: 0;
+}
+.img___4Glg1 {
+  position: relative;
+  object-fit: cover;
+  max-width: 100%;
+}
+.img___4Glg1 > picture > img {
+  object-fit: cover;
+}
+.freeBox__oi9Qq {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  min-width: 0;
+}
+.img___9MzNa {
+  position: relative;
+  object-fit: cover;
+  max-width: 100%;
+}
+.img___9MzNa > picture > img {
+  object-fit: cover;
+}
+.waButton:global(.__wab_instance) {
+  position: fixed;
+  left: auto;
+  top: auto;
+  z-index: 1;
+  right: 24px;
+  bottom: 24px;
+}
+.link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  max-width: 100%;
+  background: #25d366;
+  box-shadow: 0px 12px 24px 0px #25d36673;
+  cursor: pointer;
+  border-radius: 100px;
+  padding: 8px;
+}
+.svg {
+  object-fit: cover;
+  max-width: 100%;
+  width: 42px;
+  height: 42px;
+  color: #ffffff;
+  flex-shrink: 0;
+}

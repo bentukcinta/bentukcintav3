@@ -246,8 +246,7 @@
           }
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "ohDidvG9XsCeFumugENU3J",
@@ -647,8 +646,7 @@
           "componentImportPath": "@plasmicpkgs/antd5/skinny/registerBreadcrumb"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "9qXrGYPf2wu9Q69JKgx7rd",
@@ -695,19 +693,6 @@
             "modulePath": "Theme1.tsx"
           },
           "cssFilePath": "plasmic/bentuk_cintav_3/PlasmicTheme1.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
-        },
-        {
-          "id": "YRvcjInRnoeK",
-          "name": "Theme2",
-          "type": "managed",
-          "projectId": "9qXrGYPf2wu9Q69JKgx7rd",
-          "renderModuleFilePath": "plasmic/bentuk_cintav_3/PlasmicTheme2.tsx",
-          "importSpec": {
-            "modulePath": "Theme2.tsx"
-          },
-          "cssFilePath": "plasmic/bentuk_cintav_3/PlasmicTheme2.module.css",
           "scheme": "blackbox",
           "componentType": "component"
         },
@@ -800,6 +785,45 @@
             "modulePath": "NavbarCinta.tsx"
           },
           "cssFilePath": "plasmic/bentuk_cintav_3/PlasmicNavbarCinta.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "CVWf3ibwWWKS",
+          "name": "Theme2",
+          "type": "managed",
+          "projectId": "9qXrGYPf2wu9Q69JKgx7rd",
+          "renderModuleFilePath": "plasmic/bentuk_cintav_3/PlasmicTheme2.tsx",
+          "importSpec": {
+            "modulePath": "Theme2.tsx"
+          },
+          "cssFilePath": "plasmic/bentuk_cintav_3/PlasmicTheme2.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "W2mM105I7MJD",
+          "name": "PageLayout",
+          "type": "managed",
+          "projectId": "9qXrGYPf2wu9Q69JKgx7rd",
+          "renderModuleFilePath": "plasmic/bentuk_cintav_3/PlasmicPageLayout.tsx",
+          "importSpec": {
+            "modulePath": "PageLayout.tsx"
+          },
+          "cssFilePath": "plasmic/bentuk_cintav_3/PlasmicPageLayout.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "IWuoszfrncHV",
+          "name": "Theme3",
+          "type": "managed",
+          "projectId": "9qXrGYPf2wu9Q69JKgx7rd",
+          "renderModuleFilePath": "plasmic/bentuk_cintav_3/PlasmicTheme3.tsx",
+          "importSpec": {
+            "modulePath": "Theme3.tsx"
+          },
+          "cssFilePath": "plasmic/bentuk_cintav_3/PlasmicTheme3.module.css",
           "scheme": "blackbox",
           "componentType": "component"
         }
@@ -911,6 +935,26 @@
           "id": "fQ9peZlZBkMA",
           "name": "og-bentukcinta-min.png",
           "filePath": "../public/plasmic/bentuk_cintav_3/images/ogBentukcintaMinpng.png"
+        },
+        {
+          "id": "Sa0Ju-WhYt8E",
+          "name": "invitation1.png",
+          "filePath": "../public/plasmic/bentuk_cintav_3/images/invitation1Png.png"
+        },
+        {
+          "id": "nU3J3s2FSFdz",
+          "name": "GS-1.png",
+          "filePath": "../public/plasmic/bentuk_cintav_3/images/gs1Png.png"
+        },
+        {
+          "id": "HimX4hRaL0I9",
+          "name": "invitation2.png",
+          "filePath": "../public/plasmic/bentuk_cintav_3/images/invitation2Png.png"
+        },
+        {
+          "id": "AF8h7d43qNOD",
+          "name": "invitation3.png",
+          "filePath": "../public/plasmic/bentuk_cintav_3/images/invitation3Png.png"
         }
       ],
       "indirect": false,
@@ -1029,6 +1073,32 @@
       ],
       "customFunctions": [],
       "jsBundleThemes": []
+    },
+    {
+      "projectId": "r3ASNrnyvLLLAtDvzUioQ",
+      "projectApiToken": "eSFGpQaYCtO9sRbPuQ2Ll9dmLOg8I4oKhx6e1PuCrsfmUIVbFbSXcy32UrPTwF9zX2HVXA0xaIKJNhCMHvA",
+      "projectName": "react-slick",
+      "version": ">0.0.0",
+      "cssFilePath": "plasmic/react_slick/plasmic.module.css",
+      "components": [],
+      "icons": [],
+      "images": [],
+      "indirect": true,
+      "globalContextsFilePath": "",
+      "splitsProviderFilePath": "",
+      "codeComponents": [
+        {
+          "id": "HOQUyOpClJ",
+          "name": "SliderWrapper",
+          "displayName": "hostless-slider",
+          "componentImportPath": "@plasmicpkgs/react-slick",
+          "helper": {
+            "name": "sliderHelpers",
+            "importPath": "@plasmicpkgs/react-slick"
+          }
+        }
+      ],
+      "customFunctions": []
     }
   ],
   "globalVariants": {
