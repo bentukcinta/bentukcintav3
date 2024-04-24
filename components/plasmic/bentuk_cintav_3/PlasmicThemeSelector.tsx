@@ -59,8 +59,8 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import Theme1 from "../../Theme1"; // plasmic-import: a3bFpMTS7U_s/component
 import Theme3 from "../../Theme3"; // plasmic-import: L6EX7BNfvU2R/component
+import Theme1 from "../../Theme1"; // plasmic-import: a3bFpMTS7U_s/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -92,8 +92,8 @@ export const PlasmicThemeSelector__ArgProps = new Array<ArgPropType>(
 
 export type PlasmicThemeSelector__OverridesType = {
   root?: Flex__<"div">;
-  theme1?: Flex__<typeof Theme1>;
   theme3?: Flex__<typeof Theme3>;
+  theme1?: Flex__<typeof Theme1>;
 };
 
 export interface DefaultThemeSelectorProps {
@@ -125,7 +125,7 @@ function PlasmicThemeSelector__RenderFunc(props: {
     () =>
       Object.assign(
         {
-          theme: "theme1",
+          theme: "theme3",
           selectorSlug: "gupastephanie"
         },
         props.args
@@ -222,43 +222,6 @@ function PlasmicThemeSelector__RenderFunc(props: {
     >
       {(() => {
         try {
-          return $props.theme == "theme1";
-        } catch (e) {
-          if (
-            e instanceof TypeError ||
-            e?.plasmicType === "PlasmicUndefinedDataError"
-          ) {
-            return true;
-          }
-          throw e;
-        }
-      })() ? (
-        <Theme1
-          data-plasmic-name={"theme1"}
-          data-plasmic-override={overrides.theme1}
-          className={classNames("__wab_instance", sty.theme1)}
-          onTmp1ToChange={generateStateOnChangeProp($state, [
-            "theme1",
-            "tmp1To"
-          ])}
-          slug={(() => {
-            try {
-              return $props.selectorSlug;
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return "yantoyanti";
-              }
-              throw e;
-            }
-          })()}
-          tmp1To={generateStateValueProp($state, ["theme1", "tmp1To"])}
-        />
-      ) : null}
-      {(() => {
-        try {
           return $props.theme == "theme3";
         } catch (e) {
           if (
@@ -294,22 +257,59 @@ function PlasmicThemeSelector__RenderFunc(props: {
           tmp1To={generateStateValueProp($state, ["theme3", "tmp1To"])}
         />
       ) : null}
+      {(() => {
+        try {
+          return $props.theme == "theme1";
+        } catch (e) {
+          if (
+            e instanceof TypeError ||
+            e?.plasmicType === "PlasmicUndefinedDataError"
+          ) {
+            return true;
+          }
+          throw e;
+        }
+      })() ? (
+        <Theme1
+          data-plasmic-name={"theme1"}
+          data-plasmic-override={overrides.theme1}
+          className={classNames("__wab_instance", sty.theme1)}
+          onTmp1ToChange={generateStateOnChangeProp($state, [
+            "theme1",
+            "tmp1To"
+          ])}
+          slug={(() => {
+            try {
+              return $props.selectorSlug;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return "yantoyanti";
+              }
+              throw e;
+            }
+          })()}
+          tmp1To={generateStateValueProp($state, ["theme1", "tmp1To"])}
+        />
+      ) : null}
     </div>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root", "theme1", "theme3"],
-  theme1: ["theme1"],
-  theme3: ["theme3"]
+  root: ["root", "theme3", "theme1"],
+  theme3: ["theme3"],
+  theme1: ["theme1"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  theme1: typeof Theme1;
   theme3: typeof Theme3;
+  theme1: typeof Theme1;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -372,8 +372,8 @@ export const PlasmicThemeSelector = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    theme1: makeNodeComponent("theme1"),
     theme3: makeNodeComponent("theme3"),
+    theme1: makeNodeComponent("theme1"),
 
     // Metadata about props expected for PlasmicThemeSelector
     internalVariantProps: PlasmicThemeSelector__VariantProps,

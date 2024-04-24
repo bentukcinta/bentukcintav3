@@ -66,7 +66,6 @@ import {
 } from "@plasmicapp/react-web/lib/data-sources";
 
 import { PlasmicHead } from "@plasmicapp/react-web";
-import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import WaButton from "../../WaButton"; // plasmic-import: -FgUGjBTnfh7/component
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
@@ -101,7 +100,6 @@ export const PlasmicTheme3__ArgProps = new Array<ArgPropType>(
 export type PlasmicTheme3__OverridesType = {
   root?: Flex__<"div">;
   pageMetadataOverride?: Flex__<typeof PlasmicHead>;
-  embedHtml?: Flex__<typeof Embed>;
   hero?: Flex__<"section">;
   waButton?: Flex__<typeof WaButton>;
   link?: Flex__<"a"> & Partial<LinkProps>;
@@ -266,15 +264,6 @@ function PlasmicTheme3__RenderFunc(props: {
         })()}
       />
 
-      <Embed
-        data-plasmic-name={"embedHtml"}
-        data-plasmic-override={overrides.embedHtml}
-        className={classNames("__wab_instance", sty.embedHtml)}
-        code={
-          "<style>\n.lightbox {\n  /* Default to hidden */\n  display: none;\n\n  /* Overlay entire screen */\n  position: fixed;\n  z-index: 999;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  \n  /* A bit of padding around image */\n  padding: 1em;\n\n  /* Translucent background */\n  background: rgba(0, 0, 0, 0.8);\n}\n\n/* Unhide the lightbox when it's the target */\n.lightbox:target {\n  display: block;\n}\n\n.lightbox span {\n  /* Full width and height */\n  display: block;\n  width: 100%;\n  height: 100%;\n\n  /* Size and position background image */\n  background-position: center;\n  background-repeat: no-repeat;\n  background-size: contain;\n}\n</style>"
-        }
-      />
-
       <section
         data-plasmic-name={"hero"}
         data-plasmic-override={overrides.hero}
@@ -376,17 +365,8 @@ function PlasmicTheme3__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: [
-    "root",
-    "pageMetadataOverride",
-    "embedHtml",
-    "hero",
-    "waButton",
-    "link",
-    "svg"
-  ],
+  root: ["root", "pageMetadataOverride", "hero", "waButton", "link", "svg"],
   pageMetadataOverride: ["pageMetadataOverride"],
-  embedHtml: ["embedHtml"],
   hero: ["hero"],
   waButton: ["waButton", "link", "svg"],
   link: ["link", "svg"],
@@ -398,7 +378,6 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   pageMetadataOverride: typeof PlasmicHead;
-  embedHtml: typeof Embed;
   hero: "section";
   waButton: typeof WaButton;
   link: "a";
@@ -466,7 +445,6 @@ export const PlasmicTheme3 = Object.assign(
   {
     // Helper components rendering sub-elements
     pageMetadataOverride: makeNodeComponent("pageMetadataOverride"),
-    embedHtml: makeNodeComponent("embedHtml"),
     hero: makeNodeComponent("hero"),
     waButton: makeNodeComponent("waButton"),
     link: makeNodeComponent("link"),
