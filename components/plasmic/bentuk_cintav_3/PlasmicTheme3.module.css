@@ -6,17 +6,27 @@
   height: auto;
   justify-content: flex-start;
   align-items: center;
-  background: #f6f6f6;
+  background: #ffffff;
   min-width: 0;
 }
-.section {
+.pageMetadataOverride:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
+}
+.embedHtml:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
+}
+.hero {
   display: grid;
   position: relative;
-  align-content: flex-start;
+  align-content: flex-end;
   justify-items: center;
   width: 100%;
-  padding-left: 0;
-  padding-right: 0;
+  height: auto;
+  background: #f6f6f6;
   min-width: 0;
   grid-template-columns:
     var(--plsmc-viewport-gap) 1fr minmax(0, var(--plsmc-wide-chunk))
@@ -26,64 +36,31 @@
     )
     minmax(0, var(--plsmc-wide-chunk)) 1fr var(--plsmc-viewport-gap);
 }
-.section > * {
+.hero > * {
   grid-column: 4;
 }
-.freeBox__yvZ8F {
-  display: flex;
+.img__dpGb {
   position: relative;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-  height: auto;
+  object-fit: cover;
   max-width: 800px;
-  min-width: 0;
 }
-.img__mnS5F {
-  position: relative;
-  object-fit: cover;
-  max-width: 100%;
-}
-.img__mnS5F > picture > img {
+.img__dpGb > picture > img {
   object-fit: cover;
 }
-.freeBox__fx08A {
-  display: flex;
+.img__p2UzQ {
   position: relative;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-  height: auto;
+  object-fit: cover;
   max-width: 800px;
-  min-width: 0;
 }
-.img___4Glg1 {
-  position: relative;
-  object-fit: cover;
-  max-width: 100%;
-}
-.img___4Glg1 > picture > img {
+.img__p2UzQ > picture > img {
   object-fit: cover;
 }
-.freeBox__oi9Qq {
-  display: flex;
+.img__vr5TM {
   position: relative;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-  height: auto;
+  object-fit: cover;
   max-width: 800px;
-  min-width: 0;
 }
-.img___9MzNa {
-  position: relative;
-  object-fit: cover;
-  max-width: 100%;
-}
-.img___9MzNa > picture > img {
+.img__vr5TM > picture > img {
   object-fit: cover;
 }
 .waButton:global(.__wab_instance) {
@@ -93,6 +70,7 @@
   z-index: 1;
   right: 24px;
   bottom: 24px;
+  flex-shrink: 0;
 }
 .link {
   display: flex;

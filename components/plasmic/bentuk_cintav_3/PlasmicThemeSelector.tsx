@@ -60,7 +60,7 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import Theme1 from "../../Theme1"; // plasmic-import: a3bFpMTS7U_s/component
-import Theme3 from "../../Theme3"; // plasmic-import: IWuoszfrncHV/component
+import Theme3 from "../../Theme3"; // plasmic-import: L6EX7BNfvU2R/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -173,6 +173,12 @@ function PlasmicThemeSelector__RenderFunc(props: {
 
         valueProp: "to",
         onChangeProp: "onToChange"
+      },
+      {
+        path: "theme3.tmp1To",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => "yono"
       }
     ],
     [$props, $ctx, $refs]
@@ -240,7 +246,7 @@ function PlasmicThemeSelector__RenderFunc(props: {
       ) : null}
       {(() => {
         try {
-          return $props.theme == "theme3";
+          return $props.theme == "theme1";
         } catch (e) {
           if (
             e instanceof TypeError ||
@@ -255,19 +261,11 @@ function PlasmicThemeSelector__RenderFunc(props: {
           data-plasmic-name={"theme3"}
           data-plasmic-override={overrides.theme3}
           className={classNames("__wab_instance", sty.theme3)}
-          slug={(() => {
-            try {
-              return $props.selectorSlug;
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return undefined;
-              }
-              throw e;
-            }
-          })()}
+          onTmp1ToChange={generateStateOnChangeProp($state, [
+            "theme3",
+            "tmp1To"
+          ])}
+          tmp1To={generateStateValueProp($state, ["theme3", "tmp1To"])}
         />
       ) : null}
     </div>
